@@ -1,10 +1,79 @@
-html {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-.container {
+body {
+    background: url("../images/background-image.jpg");
+}
+
+.app-container {
     display: grid;
-    
+    grid-template-columns: 1fr;
+    grid-template-rows: 50px 300px 1fr 50px;
+    grid-template-areas: "navbar" "header" "apps" "footer";
+    width: 80%;
+    height: 100vh;
+    background-color: hsl(240, 27%, 18%);
+    margin: 0 auto;
+}
+
+nav {
+    display: flex;
+    position: fixed;
+    height: 50px;
+    width: 100vw;
+    top: 0;
+}
+
+header {
+    grid-area: header;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    top: 70px;
+    width: 70%;
+}
+
+header h1 {
+    color: hsl(11, 24%, 72%);
+}
+
+header h3 {
+    color: hsl(11, 24%, 72%);
+}
+
+#ben-image {
+    border-radius: 50%;
+    height: 300px;
+    width: 300px;
+    border: solid 5px hsl(11, 24%, 72%)
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    grid-area: apps;
+}
+
+#todo-app {
+    display: flex;
+}
+
+#winds-app {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+#toilet-app {
+    display: flex;
+}
+
+footer {
+    grid-area: footer;
+    position: absolute;
+    bottom: 0;
 }
